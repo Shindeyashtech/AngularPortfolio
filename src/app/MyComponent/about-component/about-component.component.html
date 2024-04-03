@@ -1,0 +1,11 @@
+<div *ngFor="let employee of employee">
+    <h2>{{ employee.firstName }} {{ employee.lastName }}</h2>
+    <p>Age: {{ employee.age }}</p>
+    <p>Email: {{ employee.email }}</p>
+    <p>Contact Number: {{ employee.contactNumber }}</p>
+    <p>Date of Birth: {{ employee.dob }}</p>
+    <p>Salary: {{ employee.salary }}</p>
+    <p>Address: {{ employee.address }}</p>
+    <img [src]="employee.imageUrl" alt="Employee Image">
+    <hr>
+</div>

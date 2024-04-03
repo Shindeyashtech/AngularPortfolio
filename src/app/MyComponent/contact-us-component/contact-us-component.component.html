@@ -1,0 +1,38 @@
+<h1>Contact Form</h1>
+<form [formGroup]="contact" (ngSubmit)="onSubmit()">
+    <div class="form-group" >
+
+        <div class="mb-5 row   ">
+            <div class="col">
+                <label>First Name</label>
+                <input [class.is-invalid]="contact.get('first_name')?.invalid && contact.get('first_name')?.touched"
+                    [class.is-valid]="contact.get('first_name')?.valid && contact.get('first_name')?.untouched" type="text" required
+                    maxlength="50" class="form-control" formControlName="first_name" placeholder="Enter Your First Name ">
+            </div>
+            <div class="col">
+                <label>Last Name</label>
+                <input [class.is-invalid]="contact.get('last_name')?.invalid && contact.get('last_name')?.touched"
+                [class.is-valid]="contact.get('last_name')?.valid && contact.get('last_name')?.untouched" type="text" required maxlength="50" class="form-control" formControlName="last_name">
+            </div>
+        </div>
+        <div class="mb-5 row  ">
+            <div class="col">
+                <label for="email">Email address</label>
+                <input [class.is-invalid]="contact.get('email')?.invalid && contact.get('email')?.touched"
+                [class.is-valid]="contact.get('email')?.valid && contact.get('email')?.untouched"  type="email" required maxlength="50" class="form-control" formControlName="email" name="email"
+                    placeholder="name@example.com">
+            </div>
+            <div class="col">
+                <label for="phone">Phone</label>
+                <input  [class.is-invalid]="contact.get('phone')?.invalid && contact.get('phone')?.touched"
+                [class.is-valid]="contact.get('phone')?.valid && contact.get('phone')?.untouched" type="tel" required maxlength="50" class="form-control" formControlName="phone" name="Phone"
+                placeholder="Phone">
+            </div>
+        </div>
+    </div>
+    <div class="mb-5">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary px-4 btn-lg">Post</button>
+</form>
